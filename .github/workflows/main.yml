@@ -20,7 +20,7 @@ jobs:
           java-version: '17'
           cache: 'maven'
       - name: Build with Maven
-        run: ./mvnw install -U -DskipTests
+        run: mvn install -Dmaven.test.failure.ignore=true
       
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -34,6 +34,6 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Compile and push to ecr
-        run: ./mnvw compile jib:build -Dimage=918030663991.dkr.ecr.us-east-1.amazonaws.com/mytestimage
+        run: mvn compile jib:build -Dimage=918030663991.dkr.ecr.us-east-1.amazonaws.com/mytestimage
       
            
