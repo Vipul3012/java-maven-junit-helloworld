@@ -171,7 +171,16 @@
           </execution>
         </executions>
       </plugin>
-
+      <plugin>
+  <groupId>com.google.cloud.tools</groupId>
+  <artifactId>jib-maven-plugin</artifactId>
+  <version>0.9.0</version>
+  <configuration>
+    <to>
+      <image>918030663991.dkr.ecr.us-east-1.amazonaws.com/mytestimage</image>
+    </to>
+  </configuration>
+</plugin>       
     </plugins>
   </build>
 </project>
