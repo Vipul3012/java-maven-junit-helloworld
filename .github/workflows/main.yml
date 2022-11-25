@@ -20,11 +20,7 @@ jobs:
           java-version: '17'
           cache: 'maven'
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
-
-      
-
-    
+        run: ./mvnw install -U -DskipTests
 
       - name: Compile and push to ecr
         run: ./mnvw compile jib:build -Dimage=918030663991.dkr.ecr.us-east-1.amazonaws.com/mytestimage
